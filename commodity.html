@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		
+	</title>
+	<style type="text/css">
+		
+		.icon > img {
+			width: 100px;
+		} 
+		p{
+			text-align: center;
+		}
+
+		.payout {
+    		background: transparent;
+    		margin-right: 20px;
+    		float: right;
+   		 	margin-top: 90px;
+    		width: 200px;
+    		height: 35px;
+    		border-radius: 10px;
+    		border: 2px solid #26ae60;
+    		color: #26ae60;
+		}
+
+		.first {
+			margin-top: 100px;
+		}
+		.sec {
+			margin-top: 50px;
+		}
+
+		.sec::before {
+			content: "Recorded weight: ";
+		}
+		.third {
+			margin-top: 50px;
+		}
+		.fourth {
+			margin-top: 50px;
+		}
+
+		.calculate {
+			background: transparent;
+    		margin-left: 42%;
+    		float: center;
+   		 	margin-top: 40px;
+    		width: 200px;
+    		height: 35px;
+    		border-radius: 10px;
+    		border: 2px solid #26ae60;
+    		color: #26ae60;
+    		text-align: center;
+		}
+
+		@media screen and (max_width: 1366px) {
+			.calculate {
+				margin-left: 50% !important;
+			}
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="icon">
+		<img src="recycle.png">
+	</div>
+
+	<p class="first">Commodity: Clear PET bottle</p>
+
+	<p class="sec">15kg</p>
+
+	<p class="third">Rate per Kilogram: R3.00 / kg</p>
+
+	<button class="calculate" onclick="calculateAmount()">calculate Payout</button>
+
+		
+	<p class="fourth"></p>
+
+	<button class="payout" onclick="location.href = 'complete.html'">Confirm payment</button>
+
+
+	<script src="../daily-ui-007-settings/daily-ui-007-settings/dist/jquery.min.js"></script>
+  <script  src="./script.js"></script>
+ 
+
+  <script>
+
+    
+
+  //  console.log(val);
+            function calculateAmount() {
+              var val = document.getElementById('weight').innerHTML;
+
+              var valint = parseInt(val);
+
+                var tot_price = valint * 3;
+                /*display the result*/
+                var divobj = document.querySelector('.fourth');
+                divobj.innerHTML = tot_price;
+                 
+            }
+        </script>
+
+</body>
+</html>
